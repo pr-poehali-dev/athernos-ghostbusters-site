@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import Icon from '@/components/ui/icon';
+import PaymentModal from '@/components/PaymentModal';
 
 const MinecraftServer = () => {
   const [onlinePlayers, setOnlinePlayers] = useState(47);
@@ -159,10 +160,12 @@ const MinecraftServer = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-minecraft-green hover:bg-minecraft-green/80 text-black font-bold pixel-font py-3 text-lg">
-                    <Icon name="CreditCard" size={20} className="mr-2" />
-                    КУПИТЬ
-                  </Button>
+                  <PaymentModal pkg={pkg}>
+                    <Button className="w-full bg-minecraft-green hover:bg-minecraft-green/80 text-black font-bold pixel-font py-3 text-lg">
+                      <Icon name="CreditCard" size={20} className="mr-2" />
+                      КУПИТЬ
+                    </Button>
+                  </PaymentModal>
                 </CardContent>
               </Card>
             ))}
